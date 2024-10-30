@@ -13,11 +13,11 @@ pip install Pyro4
 ```
 3. Run the server
 ```bash
-python server.py
+python .\server\server.py
 ```
 4. Run the client
 ```bash
-python client.py
+python .\client\client.py
 ```
 5. Run the Pyro4 nameserver
 ```bash
