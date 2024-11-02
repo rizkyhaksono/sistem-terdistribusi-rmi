@@ -53,11 +53,11 @@ class StorageServer:
             return f"Error listing directory '{path}': {e}"
 
 def main():
-    daemon = Pyro4.Daemon()
-    ns = Pyro4.locateNS()
+    daemon = Pyro4.Daemon(host="rmi-server", port=4041)
+    ns = Pyro4.locateNS(host="rmi-pyro", port=9090)
     uri = daemon.register(StorageServer)
-    ns.register("example.storage.server", uri)
-    print("Storage Server is ready.")
+    ns.register("rmi.s3", uri)
+    print("RMI Simple Storage Server is ready.")
     daemon.requestLoop()
 
 if __name__ == "__main__":

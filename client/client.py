@@ -53,7 +53,7 @@ def list_directory(server, command):
         print("Error:", contents)
 
 def main():
-    server = Pyro4.Proxy("PYRONAME:example.storage.server")
+    server = Pyro4.Proxy("PYRONAME:rmi.s3")
     
     print("Available Commands:")
     print("1. create_file <filename>")
